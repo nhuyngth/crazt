@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazt Contact</title>
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('../assets/img/bg_info.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-radius: 15px; 
+            padding: 20px; 
+            height: 250px;
+            width: 300px; 
+            text-align: center;
+            margin-bottom: 0px; 
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px; 
+            border: 2px solid white; 
+        }
+
+        h1 {
+            font-size: 20px; 
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 14px; 
+            margin: 5px 0;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(106, 13, 173, 0.3); 
+            border-radius: 20px;
+            margin: 5px 0;
+            padding: 10px 15px;
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s, border 0.3s; 
+            border: 2px solid rgba(255, 255, 255, 0.5); 
+            width: 200px; 
+        }
+
+        .button:hover {
+            background-color: rgba(126, 43, 222, 0.6); 
+            border: 2px solid rgba(255, 255, 255, 0.8); 
+        }
+
+        .button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .subscribe-btn {
+            margin-top: 10px; 
+            background-color: #f7a8b8;
+            color: #fff;
+            padding: 8px 15px; 
+            border-radius: 20px; 
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px; 
+            display: inline-block;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #f58ba3;
+        }
+
+        .sakura {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-image: url('../assets/img/snow.png');
+            background-size: cover;
+            z-index: 1;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="profile">
+                <img src="../assets/img/profile.jpg" alt="Profile Picture">
+            </div>
+            <h1>Crazt</h1>
+            <p>Hỗ trợ 24/7, mọi lúc mọi nơi kể cả ngày lễ.<br>
+                (scroll for more)
+            </p>
+            <h2>Dịch Vụ Giá Rẻ</h2>
+        </div>
+
+        <div class="button-container">
+            <a href="https://docs.google.com/spreadsheets/d/1IOO1Q8pXsKv_98fDm8jmySZ8weE-AfquuEZuGsF0xVM/edit?gid=0#gid=0" target="_blank" class="button">
+                <img src="../assets/img/money.png" alt="Icon">
+                Price List
+            </a>
+            <a href="https://www.instagram.com/stories/highlights/18033086318477893/" target="_blank" class="button">
+                <img src="../assets/img/bill.png" alt="Icon">
+                Bills
+            </a>
+            <a href="https://nhuyngth.github.io/crazt" target="_blank" class="button">
+                <img src="../assets/img/favicon.png" alt="Icon">
+                Website
+            </a>
+            <a href="https://facebook.com/nhnhuyngth" target="_blank" class="button">
+                <img src="../assets/img/facebook.png" alt="Icon">
+                Facebook
+            </a>
+            <a href="https://instagram.com/nhnhuyngth" target="_blank" class="button">
+                <img src="../assets/img/instagram.png" alt="Icon">
+                Instagram
+            </a>
+            <a href="https://t.me/nhnhuyngth" target="_blank" class="button">
+                <img src="../assets/img/telegram.png" alt="Icon">
+                Telegram
+            </a>
+            <a href="https://zalo.me/0898944440" target="_blank" class="button">
+                <img src="../assets/img/telephone.png" alt="Icon">
+                Zalo
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function createSakura() {
+            const sakura = document.createElement('div');
+            sakura.classList.add('sakura');
+            sakura.style.left = Math.random() * window.innerWidth + 'px';
+            sakura.style.animationDuration = Math.random() * 2 + 3 + 's'; 
+            sakura.style.animationDelay = '0s';
+            document.body.appendChild(sakura);
+
+            setTimeout(() => {
+                sakura.remove();
+            }, 10000); 
+        }
+
+        setInterval(createSakura, 100);
+    </script>
+</body>
+</html>

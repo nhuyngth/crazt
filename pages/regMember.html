@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Gói Member - Crazy Shop</title>
+
+    <link href="../assets/img/favicon.png" rel="icon">
+
+    <style>
+        body {
+            background-image: url('../assets/img/moon.png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.6); 
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #FF5733;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #495ee8;
+            color: white;
+            cursor: pointer;
+            width: 50%; 
+            border: none;
+            padding: 10px; 
+            margin-top: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF8C33;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #495ee8;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .buttons a:hover {
+            background-color: #FF8C33;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #FF5733;
+            text-align: center;
+            padding: 15px;
+            border: 2px dashed #FF5733; 
+            border-radius: 10px; 
+            background-color: rgba(255, 255, 255, 0.7); 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Đăng Ký Gói Member Crazy Shop</h1>
+        
+        <form action="../php/send-email.php" method="post"> 
+            <label for="fullname">Họ và tên:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="membership">Chọn gói đăng ký:</label>
+            <select id="membership" name="membership" required>
+                <option value="" disabled selected>Hãy lựa chọn gói</option> 
+                <option value="VIP Study">VIP Study (35k/tháng) – Gói học tập</option>
+                <option value="VIP Entertain">VIP Entertain (35k/tháng) – Gói giải trí</option>
+                <option value="Platinum">Platinum (80k/tháng) – Bao gồm cả học tập, giải trí và tài nguyên khác</option>
+            </select>
+
+            <label for="payment">Phương thức thanh toán:</label>
+            <select id="payment" name="payment" required>
+                <option value="Momo">Thanh toán qua Momo</option>
+                <option value="Bank">Chuyển khoản ngân hàng</option>
+                <option value="ZaloPay">Thanh toán bằng BUSD / USDT</option>
+                <option value="Card">Thanh toán bằng thẻ cào/thẻ game</option>
+            </select>
+
+            <label for="note">Ghi chú (tuỳ chọn):</label>
+            <textarea id="note" name="note" rows="4" placeholder="Nhập ghi chú nếu cần..."></textarea>
+
+            <input type="submit" value="Đăng Ký">
+        </form>
+
+        <div class="note">
+            Khi bạn đăng ký xong mình sẽ chủ động liên hệ bạn qua thông tin mà bạn đã để lại. <br>
+            Nên để lại những mạng xã hội khác ở phần ghi chú để mình dễ dàng liên hệ hơn.
+        </div>
+    </div>
+
+</body>
+</html>
